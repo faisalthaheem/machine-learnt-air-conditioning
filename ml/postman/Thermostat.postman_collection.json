@@ -1,0 +1,116 @@
+{
+	"info": {
+		"name": "Thermostat",
+		"_postman_id": "19a5e724-ab3c-c0cc-474c-d2705ba937c6",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ML",
+			"description": "",
+			"item": [
+				{
+					"name": "http://localhost:5000/learn-state",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5000/learn-state",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"learn-state"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/learn-thermostat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:5000/learn-thermostat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"learn-thermostat"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/classify-state",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"input\":[{{day}},{{extHumidity}},{{extTemp}},{{fanspeed}},{{hour}},{{loungeHumidity}},{{loungeTemp}},{{minute}},{{mode}},{{month}},{{pirstatus}}]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/classify-state",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"classify-state"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:5000/classify-thermostat",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"input\":[{{day}},{{extHumidity}},{{extTemp}},{{fanspeed}},{{hour}},{{loungeHumidity}},{{loungeTemp}},{{minute}},{{mode}},{{month}},{{pirstatus}}]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/classify-thermostat",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"classify-thermostat"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

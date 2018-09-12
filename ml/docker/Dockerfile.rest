@@ -1,0 +1,23 @@
+#base is as follows
+FROM faisalthaheem/lt-base-ubuntu16:1.0
+
+#add tensorflow deps
+ADD deps /deps/
+
+#include the folder
+ADD scripts /scripts/
+
+#install tensorflow
+#RUN pip install /deps/tensorflow-1.4.0-cp35-cp35m-linux_x86_64.whl
+
+#set environment
+ENV APP_ENV=Docker
+
+#ports
+EXPOSE 5000
+
+#volumes
+VOLUME ["/scripts/assets","/assets","/scripts"]
+
+#entry point
+CMD	["python","/scripts/rest-service.py"]

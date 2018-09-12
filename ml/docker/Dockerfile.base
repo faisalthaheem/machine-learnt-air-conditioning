@@ -1,0 +1,4 @@
+#base in official python 3.5
+FROM python:3.5
+#install packages
+RUN pip install numpy h5py pandas pymongo flask scikit-learn tensorflow keras argparse

@@ -1,0 +1,51 @@
+version: "3"
+services:
+ mongodbhost:
+  image: mongo
+  deploy:
+   replicas: 1
+   restart_policy:
+    condition: on-failure
+    delay: 60s
+    window: 60s
+  expose:
+   - "27017"
+  ports:
+   - "27017:27017"
+  networks:
+   - thermonet
+ mqtthost:
+  image: toke/mosquitto
+  deploy:
+   replicas: 1
+   restart_policy:
+    condition: on-failure
+    delay: 60s
+    window: 60s
+  expose:
+   - "1883"
+   - "9001"
+  ports:
+   - "1883:1883"
+   - "9001:9001"
+  networks:
+   - thermonet
+ nodered:
+  image: nodered/node-red-docker
+  deploy:
+   replicas: 1
+   restart_policy:
+    condition: on-failure
+    delay: 60s
+    window: 60s
+  expose:
+   - "1880"
+  ports:
+   - "1880:1880"
+  links:
+   - mongodbhost
+   - mqtthost
+  networks:
+   - thermonet
+networks:
+ thermonet:
