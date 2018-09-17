@@ -33,7 +33,11 @@ There are 3 hardware components developed using esp8266 modules, which are
 3. A DHT-22 sensor which monitors the temperature and humidity in the room, this
     information is used in the machine learning phase.
 
+Following image shows the data acquisition on the operational system
+![Sensor data](https://cdn.rawgit.com/faisalthaheem/machine-learnt-air-conditioning/0279d301/docs/sensors.png)
+
 The following diagrams show the high level system services, which are packaged as docker containers for ease of deployment.
+
 ![System Block Diagram](https://cdn.rawgit.com/faisalthaheem/machine-learnt-air-conditioning/c8fef40f/docs/block-diagram.png)
 
 ![Services Diagram](https://cdn.rawgit.com/faisalthaheem/machine-learnt-air-conditioning/c8fef40f/docs/services-diagram.png)
