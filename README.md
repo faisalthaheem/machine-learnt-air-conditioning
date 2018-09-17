@@ -5,6 +5,15 @@
 
 System that learns how often a room is occupied based on time, movement, air conditioning preferences and learns on historic data. This can have a significant impact on the energy use around a house/building. 
 
+# Quick Start
+|Document|Summary|Link|
+|--|--|--|
+|Introductory post  | Discusses the idea behind the system  | [Blog Post](https://faisalajmals.wordpress.com/) |
+|Quick Start| Minimal setup that walks through getting software aspect of the system up and running quickly | [Wiki](https://github.com/faisalthaheem/machine-learnt-air-conditioning/wiki/Quick-Start) |
+|Hardware Setup| Brief introduction to assembling the hardware sensors| [Hardware Sensors](https://github.com/faisalthaheem/machine-learnt-air-conditioning/wiki/Hardware-Setup)|
+
+# Brief Introduction
+
 There are 3 hardware components developed using esp8266 modules, which are
 
  1. An IR Blaster which relays smart phone app commands to the air
@@ -20,9 +29,3 @@ The following diagrams show the high level system services, which are packaged a
 
 ![Services Diagram](https://cdn.rawgit.com/faisalthaheem/machine-learnt-air-conditioning/c8fef40f/docs/services-diagram.png)
 
-# Documentation structure
-|Document|Summary|Link|
-|--|--|--|
-|Introductory post  | Discusses the idea behind the system  | [Blog Post](https://faisalajmals.wordpress.com/) |
-|Quick Start| Minimal setup that walks through getting software aspect of the system up and running quickly | [Wiki](https://github.com/faisalthaheem/machine-learnt-air-conditioning/wiki/Quick-Start) |
-||||
