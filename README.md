@@ -5,6 +5,15 @@
 
 System that learns how often a room is occupied based on time, movement, air conditioning preferences and learns on historic data. This can have a significant impact on the energy use around a house/building. 
 
+This sytem can learn based on the following habits
+* how often a room is occupied - based on PIR data
+* hat time of day is the air conditioning demanded by residents
+* which months, days are most demanding in terms of air conditioning
+* difference between outside temperature and humidity (acquired through open weather) to inside temperature and humidity
+
+This means if somone switches on the air conditioning everday at the same time then after a while the system will automatically start to switch on the AC wihtout any manual intervention.
+
+
 # Quick Start
 |Document|Summary|Link|
 |--|--|--|
