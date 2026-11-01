@@ -11,7 +11,7 @@
     "watch": "ionic-app-scripts watch"
   },
   "dependencies": {
-    "@angular/common": "2.2.1",
+    "@angular/common": "20.3.34",
     "@angular/compiler": "2.2.1",
     "@angular/compiler-cli": "2.2.1",
     "@angular/core": "10.2.5",
