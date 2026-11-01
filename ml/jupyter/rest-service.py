@@ -1,6 +1,7 @@
 from flask import Flask,jsonify,request
 import shared
 import subprocess
+import functools
 from classify_state import StateClassifier
 from classify_temperature import TemperatureClassifier
 import json
@@ -10,12 +11,25 @@ import os
 
 app = Flask(__name__)
 scripts_path = "./"
+api_key = os.environ.get("REST_SERVICE_API_KEY")
+
+def require_api_key(view_func):
+	@functools.wraps(view_func)
+	def wrapped(*args, **kwargs):
+		if not api_key or request.headers.get('X-Api-Key') != api_key:
+			response = dict()
+			response["response"] = "Unauthorized"
+			return jsonify(response), 401
+		return view_func(*args, **kwargs)
+	return wrapped
 
 @app.route('/')
+@require_api_key
 def index():
 	return "Hello world"
 	
 @app.route('/learn-state')
+@require_api_key
 def learn_state():
 	
 	s_path = scripts_path + "learn_state.py"
@@ -28,6 +42,7 @@ def learn_state():
 	return jsonify(response)
 	
 @app.route('/learn-thermostat')
+@require_api_key
 def learn_thermostat():
 	
 	s_path = scripts_path + "learn_thermostat.py"
@@ -40,6 +55,7 @@ def learn_thermostat():
 	return jsonify(response)
 	
 @app.route('/classify-state', methods=['POST'])
+@require_api_key
 def classify_state():
 	
 	state_classifier = StateClassifier()
@@ -59,6 +75,7 @@ def classify_state():
 	return jsonify(response)
 	
 @app.route('/classify-thermostat', methods=['POST'])
+@require_api_key
 def classify_thermostat():
 	
 	temperature_classifier = TemperatureClassifier()
